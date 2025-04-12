@@ -1,0 +1,53 @@
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear Cuenta</title>
+    <link rel="stylesheet" href="../static/css/new-cuenta.css">
+    <link rel="shortcut icon" type="image/x-icon" href="../static/images/marca.png">
+</head>
+<body>
+    <section class="container">
+        <div class="cont-login">
+            <div class="login-encab">
+                <h1>¡Hola amigo!</h1>
+                <p>Crea una cuenta al instante</p>
+            </div>
+            <form class="login-form" id="crear_form">
+                <div class="cuadro-login">
+                    <div class="name-logo"></div>
+                    <input type="text" name="name" placeholder="Nombre" id="name">
+                </div>
+                <div class="cuadro-login">
+                    <div class="email-logo"></div>
+                    <input type="email" name="email" placeholder="Correo electronico" id="email">
+                </div>
+                <div class="cuadro-login">
+                    <div class="password-logo"></div>
+                    <input type="password" name="password" id="password" placeholder="Contraseña">
+                    <div class="view-password"></div>
+                </div>
+                <div class="terminos">
+                    <input type="checkbox" name="ter_cond" id="ter_cond">
+                    <p>Ingrese y acepte los <a href="https://policies.google.com/terms?hl=es">Terminos y condiciones</a></p>
+                </div>
+                <div class="boton-crear">
+                    <button type="submit">Crear cuenta</button>
+                </div>
+                <div class="new-cuenta">
+                    <p>¿Tienes una cuenta ya? <a href="login.html">Iniciar sesion</a></p>
+                </div>
+            </form>
+        </div>
+        <div class="cont-text">
+            <h1>Bienvenido</h1>
+            <p>Estás ingresando a una aplicación web simulada.
+            Esta plataforma fue diseñada como ejercicio de práctica, por lo que sus
+                funcionalidades no están conectadas a un servidor real.
+                ¡Perfecta para experimentar con formularios y estilos!</p>
+        </div>
+    </section>
+
+    <script src="../static/js/new-cuenta.js"></script>
+</body>
+</html>

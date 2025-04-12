@@ -1,0 +1,47 @@
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="../static/css/login.css">
+    <link rel="shortcut icon" type="image/x-icon" href="../static/images/marca.png">
+</head>
+<body>
+    <section class="container">
+        <div class="cont-login">
+            <div class="login-encab">
+                <h1>¡Hola!</h1>
+                <p>Inicia sesion con tu cuenta</p>
+            </div>
+            <form class="login-form" id="login-form">
+                <div class="cuadro-login">
+                    <div class="email-logo"></div>
+                    <input type="email" name="email" placeholder="Email" id="correo">
+                </div>
+                <div class="cuadro-login">
+                    <div class="password-logo"></div>
+                    <input type="password" name="password" id="password" placeholder="Contraseña">
+                    <div class="view-password"></div>
+                </div>
+                <div class="reset-password">
+                    <a href="reset-password.html">¿Olvidaste la contraseña?</a>
+                </div>
+                <div class="boton-login">
+                    <button type="submit">Iniciar sesion</button>
+                </div>
+                <div class="new-cuenta">
+                    <p>¿No tienes una cuenta? <a href="new-cuenta.html">Crear</a></p>
+                </div>
+            </form>
+        </div>
+        <div class="cont-text">
+            <h1>Bienvenido</h1>
+            <p>Estás ingresando a una aplicación web simulada.
+            Esta plataforma fue diseñada como ejercicio de práctica, por lo que sus
+                funcionalidades no están conectadas a un servidor real.
+                ¡Perfecta para experimentar con formularios y estilos!</p>
+        </div>
+        <script src="../static/js/login.js"></script>
+    </section>
+</body>
+</html>

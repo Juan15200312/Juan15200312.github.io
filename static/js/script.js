@@ -64,3 +64,4 @@ function smoothScroll(target) {
     block: 'start'
   });
 }
+
