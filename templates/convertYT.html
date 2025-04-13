@@ -1,0 +1,41 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ConvertYT</title>
+    <link rel="stylesheet" href="../static/css/convertYT.css">
+    <link rel="shortcut icon" type="image/x-icon" href="../static/images/marca.png">
+</head>
+
+<body>
+    <section class="fondo">
+        <div class="logo"></div>
+    </section>
+
+    <section class="container">
+        <form action="" id="convert_form">
+            <h2>Inserta la URL de un vídeo de YouTube</h2>
+            <input type="url" name="urlYT" id="urlYT" placeholder="https://www.youtube.com/watch?v=p_sf9DFRgBE" required>
+            <div class="botones">
+                <select name="format" id="format">
+                    <option value="formato" id="formato">Formato</option>
+                    <option value="mp3" id="mp3">MP3</option>
+                    <option value="mp4" id="mp4">MP4</option>
+                </select>
+                <button type="submit" id="submit">Convertir</button>
+            </div>
+        </form>
+
+        <div id="text">
+            <h1>Descarga videos de YouTube en formato MP3 o MP4</h1>
+            <p>Nuestro convertidor de YouTube a MP3 te permite convertir tus vídeos favoritos de YouTube a archivos MP3
+                (audio) o MP4 (vídeo) y descargarlos GRATIS.</p>
+        </div>
+    </section>
+
+    <script src="../static/js/convertYT.js"></script>
+
+</body>
+
+</html>

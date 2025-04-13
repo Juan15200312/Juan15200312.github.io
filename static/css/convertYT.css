@@ -1,0 +1,150 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: black;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: white;
+  }
+
+  .fondo {
+    background-color: #000;
+    height: 200px;
+    position: relative;
+    width: 100%;
+  }
+
+  .fondo .logo {
+    width: 110px;
+    height: 110px;
+    background-image: url("../images/logo-convert.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 25px;
+    z-index: 3;
+  }
+
+  .container {
+    background-color: white;
+    padding: 40px;
+    width: 90%;
+    max-width: 600px;
+    margin: -100px auto 0 auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .botones {
+    margin-top: 25px;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-self: center;
+  }
+
+  .botones button {
+    background-image: linear-gradient(45deg, #007bff, #00c5ff);
+    color: white;
+    margin: 5px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 18px;
+  }
+
+  select{
+    background-image: linear-gradient(45deg, #007bff, #00c5ff);
+    color: white;
+    margin: 5px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 18px;
+  }
+  select option{
+    background-image: linear-gradient(45deg, #007bff, #00c5ff);
+    color: black;
+    margin: 5px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 18px;
+  }
+
+  input[type="url"] {
+    padding: 10px;
+    width: 100%;
+    max-width: 500px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  @media (max-width: 795px) {
+  .fondo {
+    height: 150px;
+  }
+
+  .fondo .logo {
+    width: 80px;
+    height: 80px;
+    top: 15px;
+  }
+
+  .container {
+    padding: 20px;
+    width: 75%;
+    margin-top: -80px;
+    border-radius: 10px;
+  }
+
+  .container h2 {
+    font-size: 1.2rem;
+  }
+
+  input[type="url"] {
+    width: 100%;
+    font-size: 1rem;
+    padding: 10px;
+  }
+
+  .botones {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    align-items: center;
+  }
+
+  .botones button,
+  .botones select {
+    text-align: center;
+    width: 50%;
+    max-width: 300px;
+    font-size: 1rem;
+    padding: 10px;
+  }
+
+  #text h1 {
+    font-size: 1.3rem;
+  }
+
+  #text p {
+    font-size: 0.95rem;
+  }
+}
+

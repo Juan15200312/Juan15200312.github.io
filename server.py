@@ -1,12 +1,15 @@
-from flask import Flask, request, jsonify, render_template
+import os
+from flask import Flask, request, jsonify, render_template, send_from_directory
 from flask_cors import CORS
 
+from convertYT import convertir_a_mp3, convertir_a_mp4, borrarArchivo
 from database import guardarDatos, verificarCuentaDB, añadirCuentaDB, resetPasswordCorreoDB, resetPasswordDB
 from enviarCorreo import enviarCorreo
 from dotenv import load_dotenv
 
 load_dotenv()
 app = Flask(__name__)
+DOWNLOAD_FOLDER = os.path.abspath(".")
 CORS(app)
 @app.route('/index.html')
 def home():
@@ -28,9 +31,16 @@ def reset_password():
 def reset_password_2():
     return render_template('reset-password-2.html')
 
+@app.route('/convertYT.html')
+def convert_YT():
+    return render_template('convertYT.html')
+
+@app.route('/download/<filename>', methods=['GET'])
+def download_file(filename):
+    return send_from_directory(DOWNLOAD_FOLDER, filename, as_attachment=True)
+
 @app.route('/enviar', methods=['POST'])
 def recibirDatos():
-
     datos = request.get_json()
     print("Datos recibidos")
     print(f"Nombre: {datos['nombre']}")
@@ -96,5 +106,29 @@ def resetPassword():
     else:
         return jsonify({"mensaje": resultado, 'resultado': False}), 200
 
+@app.route('/convertYT', methods=['POST'])
+def convertYT():
+    datosUrl = request.get_json()
+    print("Datos recibidos: ")
+    print(f"URL: {datosUrl['urlYT']}")
+    print(f"Formato: {datosUrl['format']}")
+
+    if datosUrl['format'] == 'mp3':
+        title, mensaje = convertir_a_mp3(datosUrl['urlYT'])
+        if title:
+            enlace_descarga = f"http://localhost:7550/download/{title}"
+            return jsonify({"mensaje": mensaje, "descargar": enlace_descarga})
+        else:
+            return jsonify({"mensaje": mensaje, "descargar": None}), 200
+
+    elif datosUrl['format'] == 'mp4':
+        title, mensaje = convertir_a_mp4(datosUrl['urlYT'])
+        if title:
+            enlace_descarga = f"http://localhost:7550/download/{title}"
+            return jsonify({"mensaje": mensaje, "descargar": enlace_descarga})
+        else:
+            return jsonify({"mensaje": mensaje, "descargar": None}), 200
+
+    borrarArchivo()
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=7550, debug=True)
