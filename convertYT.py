@@ -55,7 +55,7 @@ def convertir_a_mp4(url):
 
 def borrarArchivo():
     lista=listdir('.')
-    extenciones=['.mp3','.mp4','.webm']
+    extenciones=['.mp3','.mp4','.webm','png']
     try:
         for archivo in lista:
             for extencion in extenciones:

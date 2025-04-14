@@ -1,16 +1,16 @@
 import os
 from flask import Flask, request, jsonify, render_template, send_from_directory
 from flask_cors import CORS
-
 from convertYT import convertir_a_mp3, convertir_a_mp4, borrarArchivo
 from database import guardarDatos, verificarCuentaDB, añadirCuentaDB, resetPasswordCorreoDB, resetPasswordDB
 from enviarCorreo import enviarCorreo
 from dotenv import load_dotenv
-
-load_dotenv()
+from generadorQR import generarQR_imagen
 app = Flask(__name__)
 DOWNLOAD_FOLDER = os.path.abspath(".")
 CORS(app)
+load_dotenv()
+
 @app.route('/index.html')
 def home():
     return render_template('index.html')
@@ -35,9 +35,13 @@ def reset_password_2():
 def convert_YT():
     return render_template('convertYT.html')
 
-@app.route('/download/<filename>', methods=['GET'])
+@app.route('/download/<path:filename>', methods=['GET'])
 def download_file(filename):
     return send_from_directory(DOWNLOAD_FOLDER, filename, as_attachment=True)
+
+@app.route('/generadorQR.html')
+def generador_QR():
+    return render_template('generadorQR.html')
 
 @app.route('/enviar', methods=['POST'])
 def recibirDatos():
@@ -118,7 +122,6 @@ def convertYT():
         title, mensaje = convertir_a_mp3(datosUrl['urlYT'])
         if title:
             enlace_descarga = f"http://192.168.1.25:7550/download/{title}"
-            print(enlace_descarga)
             return jsonify({"mensaje": mensaje, "descargar": enlace_descarga}),200
         else:
             return jsonify({"mensaje": mensaje, "descargar": None}), 200
@@ -130,6 +133,22 @@ def convertYT():
             return jsonify({"mensaje": mensaje, "descargar": enlace_descarga}),200
         else:
             return jsonify({"mensaje": mensaje, "descargar": None}), 200
+
+@app.route('/generadorQR', methods=['POST'])
+def generadorQR():
+    borrarArchivo()
+    datosGenerador = request.get_json()
+    print("Datos recibidos")
+    print(f"URL: {datosGenerador['urlQR']}")
+
+    ruta_final, mensaje =generarQR_imagen(datosGenerador['urlQR'])
+
+    if ruta_final:
+        enlace_ver = f"http://192.168.1.25:7550/{ruta_final}"
+        enlace_descarga = f"http://192.168.1.25:7550/download/{ruta_final}"
+        return jsonify({"mensaje": mensaje, "urlImagen" : enlace_ver, "urlDescarga": enlace_descarga}), 200
+    else:
+        return jsonify({"mensaje": mensaje, "urlImagen" : None, "urlDescarga": None}), 200
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=7550, debug=True)

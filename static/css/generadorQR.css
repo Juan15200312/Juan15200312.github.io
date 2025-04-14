@@ -1,0 +1,154 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  background-color: #fff;
+  line-height: 1.6;
+}
+
+.fondo {
+  background-color: #000;
+  height: 250px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.fondo .logo {
+  width: 120px;
+  height: 120px;
+  background-image: url("../images/QR.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: 3;
+}
+
+.container {
+  background-color: #fff;
+  padding: 40px;
+  width: 80%;
+  max-width: 600px;
+  margin: -100px auto 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.container h2 {
+  margin-bottom: 20px;
+}
+
+input[type="text"] {
+  padding: 10px;
+  width: 100%;
+  max-width: 500px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+
+.botones {
+  margin: 20px;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  justify-self: center;
+}
+
+.botones button {
+  background-image: linear-gradient(45deg, #007bff, #00c5ff);
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 18px;
+  transition: background 0.3s;
+}
+
+.botones button:hover {
+  background-image: linear-gradient(45deg, #005bb5, #0098cc);
+}
+
+#text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.imagenGeneradaQR {
+  border: 10px solid #000;
+  border-radius: 3px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin-top: 20px;
+  width: 280px;
+  height: 280px;
+}
+
+@media (max-width: 795px) {
+  .fondo {
+    height: 200px;
+  }
+
+  .fondo .logo {
+    width: 100px;
+    height: 100px;
+  }
+
+  .container {
+    width: 90%;
+    padding: 20px;
+    margin-top: -50px;
+  }
+
+  input[type="text"] {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .botones {
+    flex-direction: column;
+    gap: 15px;
+    width: 40%;
+    margin-bottom: 10px;
+
+  }
+
+  .botones button {
+    font-size: 16px;
+    width: 100%;
+    padding: 10px;
+  }
+
+  #text {
+    margin-top: 15px;
+    padding: 0 10px;
+  }
+
+  .imagenGeneradaQR {
+    width: 80%;
+    height: auto;
+    max-width: 280px;
+    aspect-ratio: 1 / 1;
+    background-size: contain;
+  }
+}
