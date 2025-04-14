@@ -31,8 +31,8 @@ document.getElementById('convert_form').addEventListener('submit', function(even
         })
         .then(datosUrl =>{
             alert(datosUrl.mensaje)
-            if (datosUrl.descarga){
-                window.location.href = datosUrl.descarga
+            if (datosUrl.descargar){
+                window.location.href = datosUrl.descargar
                 document.getElementById('convert_form').reset();
             }
         })
@@ -40,5 +40,4 @@ document.getElementById('convert_form').addEventListener('submit', function(even
             console.error("Error: ",error);
             alert("Hubo un error al intentar enviar el formulario.")
         });
-
 });

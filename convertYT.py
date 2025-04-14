@@ -1,5 +1,7 @@
 import os
 from os import listdir
+import re
+from unicodedata import normalize
 
 from yt_dlp import YoutubeDL
 
@@ -14,16 +16,20 @@ def convertir_a_mp3(url):
                 'preferredquality': '192',
             }],
         }
-        print("Descargando solo el audio...")
         with YoutubeDL(ydl_opts) as ydl:
-            info = ydl.extract_info(url, download=True)
-            title = info.get('title', 'audio').strip()
-        print(f"Descarga completada: {title}.mp3")
-        print("¡El proceso ha finalizado!")
-        return f"{title}.mp3", f"Descarga completada: {title}.mp3"
+            ydl.download([url])
+        mp3_files = [f for f in os.listdir('.') if f.endswith('.mp3')]
+        if not mp3_files:
+            raise FileNotFoundError("No se encontró el archivo MP3")
+        original_filename = mp3_files[0]
+
+        print(f"Archivo descargado: {original_filename}")
+        clean_title = renombrarArchivo(original_filename)
+        print(f"Descarga completada: {clean_title}")
+        return clean_title, f"Descarga completada: {clean_title}"
     except Exception as e:
         print("Ocurrió un error:", e)
-        return None, f"Ocurrio un error al intentar descargar: {url}"
+        return None, f"Error al descargar: {url}"
 
 def convertir_a_mp4(url):
     try:
@@ -33,14 +39,19 @@ def convertir_a_mp4(url):
         }
         print("Descargando el mejor video y audio en MP4...")
         with YoutubeDL(ydl_opts) as ydl:
-            info = ydl.extract_info(url, download=True)
-            title = info.get('title', 'video').strip()
-        print(f"Descarga completada: {title}.mp4")
-        print("¡El proceso ha finalizado!")
-        return f"{title}.mp4", f"Descarga completada: {title}.mp4"
+            ydl.download([url])
+        mp4_files = [f for f in os.listdir('.') if f.endswith('.mp4')]
+        if not mp4_files:
+            raise FileNotFoundError("No se encontró el archivo MP4")
+        original_filename = mp4_files[0]
+
+        print(f"Archivo descargado: {original_filename}")
+        clean_title = renombrarArchivo(original_filename)
+        print(f"Descarga completada: {clean_title}")
+        return clean_title, f"Descarga completada: {clean_title}"
     except Exception as e:
         print("Ocurrió un error:", e)
-        return None, f"Ocurrio un error al intentar descargar: {url}"
+        return None, f"Error al descargar: {url}"
 
 def borrarArchivo():
     lista=listdir('.')
@@ -53,4 +64,10 @@ def borrarArchivo():
                     print(f"Archivo eliminado: {archivo}")
     except Exception as e:
         print(f"Error al eliminar el archivo: {e}")
+
+def renombrarArchivo(nombre):
+    target_name = normalize('NFKC', nombre)
+    target_name = re.sub(r'[\\/*?#:"<>|｜]', "_", target_name)
+    os.rename(nombre, target_name)
+    return target_name
 

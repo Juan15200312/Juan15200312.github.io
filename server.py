@@ -108,6 +108,7 @@ def resetPassword():
 
 @app.route('/convertYT', methods=['POST'])
 def convertYT():
+    borrarArchivo()
     datosUrl = request.get_json()
     print("Datos recibidos: ")
     print(f"URL: {datosUrl['urlYT']}")
@@ -116,19 +117,19 @@ def convertYT():
     if datosUrl['format'] == 'mp3':
         title, mensaje = convertir_a_mp3(datosUrl['urlYT'])
         if title:
-            enlace_descarga = f"http://localhost:7550/download/{title}"
-            return jsonify({"mensaje": mensaje, "descargar": enlace_descarga})
+            enlace_descarga = f"http://192.168.1.25:7550/download/{title}"
+            print(enlace_descarga)
+            return jsonify({"mensaje": mensaje, "descargar": enlace_descarga}),200
         else:
             return jsonify({"mensaje": mensaje, "descargar": None}), 200
 
     elif datosUrl['format'] == 'mp4':
         title, mensaje = convertir_a_mp4(datosUrl['urlYT'])
         if title:
-            enlace_descarga = f"http://localhost:7550/download/{title}"
-            return jsonify({"mensaje": mensaje, "descargar": enlace_descarga})
+            enlace_descarga = f"http://192.168.1.25:7550/download/{title}"
+            return jsonify({"mensaje": mensaje, "descargar": enlace_descarga}),200
         else:
             return jsonify({"mensaje": mensaje, "descargar": None}), 200
 
-    borrarArchivo()
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=7550, debug=True)
