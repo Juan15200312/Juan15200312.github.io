@@ -28,7 +28,8 @@ def guardarDatos(datos):
         conexion.commit()
         cursor.close()
         conexion.close()
-        return "Datos guardados exitosamente"
+        print("Datos guardados exitosamente")
+        return "Datos recibidos correctamente"
     except mysql.connector.Error as e:
         return f"Ocurrio un error con la base de datos: {e}"
 
@@ -47,11 +48,11 @@ def verificarCuentaDB(datos):
         cursor.close()
         conexion.close()
         if resultado:
-            return resultado[0], resultado[1], resultado[2]
+            return True,resultado[0], resultado[1], resultado[2]
         else:
-            return None, None, None
+            return True, None, None, None
     except mysql.connector.Error as e:
-        return f"Ocurrio un error con la base de datos: {e}"
+        return False, f"Ocurrio un error con la base de datos: {e}",None,None
 
 def verificarCuentaExistenteDB(datos):
     try:

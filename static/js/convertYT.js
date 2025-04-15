@@ -1,6 +1,18 @@
 document.getElementById('convert_form').addEventListener('submit', function(event){
     event.preventDefault();
 
+    const textDiv = document.getElementById('text');
+    const container = document.getElementById('container');
+
+    const pros = document.createElement('div')
+    pros.id = 'pros'
+    pros.className = 'pros'
+    container.insertBefore(pros,textDiv)
+
+    const barra_carga = document.createElement('progress')
+    barra_carga.id='progress'
+    pros.appendChild(barra_carga)
+
     let urlYT = document.getElementById('urlYT').value;
     let format = document.getElementById('format').value;
 
@@ -32,8 +44,20 @@ document.getElementById('convert_form').addEventListener('submit', function(even
         .then(datosUrl =>{
             alert(datosUrl.mensaje)
             if (datosUrl.descargar){
-                window.location.href = datosUrl.descargar
-                document.getElementById('convert_form').reset();
+                const descarga = document.createElement('div')
+                descarga.id = 'descarga'
+                descarga.className = 'descarga'
+                container.insertBefore(descarga, textDiv)
+
+                const botonDescarga = document.createElement('button')
+                botonDescarga.id = 'botonDescarga'
+                botonDescarga.className = 'botonDescarga'
+                botonDescarga.textContent = 'Descargar'
+                botonDescarga.addEventListener('click', () => descargarMusica(datosUrl.descargar, descarga));
+                descarga.appendChild(botonDescarga);
+                while (pros.firstChild){
+                    pros.removeChild(pros.firstChild)
+                }
             }
         })
         .catch((error) => {
@@ -41,3 +65,11 @@ document.getElementById('convert_form').addEventListener('submit', function(even
             alert("Hubo un error al intentar enviar el formulario.")
         });
 });
+
+function descargarMusica(urlDescarga, descarga){
+    document.getElementById('urlYT').value = '';
+    while (descarga.firstChild){
+        descarga.removeChild(descarga.firstChild)
+    }
+    window.location.href = urlDescarga
+}

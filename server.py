@@ -50,9 +50,9 @@ def recibirDatos():
     print(f"Nombre: {datos['nombre']}")
     print(f"Correo electronico: {datos['correo']}")
     print(f"Mensaje: {datos['mensaje']}")
-    print(guardarDatos(datos))
+    mensaje= guardarDatos(datos)
     print(enviarCorreo(datos))
-    return jsonify({"mensaje": "Datos recibidos correctamente"}),200
+    return jsonify({"mensaje": mensaje}),200
 
 @app.route('/verificarCuenta', methods=['POST'])
 def verificarCuenta():
@@ -61,12 +61,14 @@ def verificarCuenta():
     print(f"Correo: {datosVerificarUser['email']}")
     print(f"Contraseña: {datosVerificarUser['password']}")
 
-    resultado0,resultado1,resultado2=verificarCuentaDB(datosVerificarUser)
+    salida,resultado0,resultado1,resultado2=verificarCuentaDB(datosVerificarUser)
     print(f"resultado0: {resultado0}")
     print(f"resultado1: {resultado1}")
     print(f"resultado2: {resultado2}")
 
-    if resultado1==None and resultado2==None:
+    if not salida:
+        return jsonify({'mensaje': resultado0}),200
+    elif resultado1==None and resultado2==None:
         return jsonify({"mensaje": "Contraseña incorrecta o usuario no registrado. ", 'resultado': False}),200
     else:
         return jsonify({"mensaje": f"Contraseña correcta. Bienvenido {resultado0}", 'resultado': True}),200
@@ -149,6 +151,9 @@ def generadorQR():
         return jsonify({"mensaje": mensaje, "urlImagen" : enlace_ver, "urlDescarga": enlace_descarga}), 200
     else:
         return jsonify({"mensaje": mensaje, "urlImagen" : None, "urlDescarga": None}), 200
+
+
+
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=7550, debug=True)

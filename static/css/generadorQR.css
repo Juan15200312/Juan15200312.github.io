@@ -128,7 +128,7 @@ input[type="text"] {
   .botones {
     flex-direction: column;
     gap: 15px;
-    width: 40%;
+    width: 60%;
     margin-bottom: 10px;
 
   }
