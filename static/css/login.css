@@ -1,51 +1,51 @@
-body{
+body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: black;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-  }
+}
 
-  .container{
+.container {
     width: 100%;
     height: 100%;
     display: flex;
     flex-direction: row;
-  }
+}
 
-.container .cont-text{
+.container .cont-text {
     background-image: linear-gradient(45deg, #007bff, #00c5ff, #007bff);
     width: 40%;
     padding: 50px;
     justify-items: center;
     align-content: center;
     text-align: center;
-  }
- 
-.container .cont-login{
-  background-color: white;
-  width: 60%;
-  padding: 50px;
-  justify-items: center;
-  text-align: center;
-  align-content: center;
 }
 
-.login-encab{
-  margin-bottom: 50px;
+.container .cont-login {
+    background-color: white;
+    width: 60%;
+    padding: 50px;
+    justify-items: center;
+    text-align: center;
+    align-content: center;
 }
 
-.login-encab h1{
-  font-size: 3rem
+.login-encab {
+    margin-bottom: 50px;
 }
 
-.login-form{
+.login-encab h1 {
+    font-size: 3rem
+}
+
+.login-form {
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
 
-.cuadro-login{
+.cuadro-login {
     display: flex;
     flex-direction: row;
     gap: 20px;
@@ -59,7 +59,7 @@ body{
     box-shadow: 2px 2px 2px 2px rgb(175, 172, 172);
 }
 
-.cuadro-login .email-logo{
+.cuadro-login .email-logo {
     background-image: url("../images/email-logo.svg");
     width: 40px;
     height: 40px;
@@ -68,7 +68,7 @@ body{
     background-repeat: no-repeat;
 }
 
-.cuadro-login .password-logo{
+.cuadro-login .password-logo {
     background-image: url("../images/password-logo.svg");
     width: 40px;
     height: 40px;
@@ -77,125 +77,128 @@ body{
     background-repeat: no-repeat;
 }
 
-.cuadro-login .view-password{
-  background-image: url("../images/view-logo.svg");
-  width: 25px;
-  height: 25px;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  cursor: pointer;
-}
-.cuadro-login .view-password:hover{
-  filter: drop-shadow(3px 1px 1px #686969);
+.cuadro-login .view-password {
+    background-image: url("../images/view-logo.svg");
+    width: 25px;
+    height: 25px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
 }
 
-.cuadro-login input[name=email]{
-  border: none;
-  height: 25px;
-  width: 70%;
-  outline: none;
+.cuadro-login .view-password:hover {
+    filter: drop-shadow(3px 1px 1px #686969);
 }
 
-.cuadro-login input[name=password]{
+.cuadro-login input[name=email] {
+    border: none;
+    height: 25px;
+    width: 70%;
+    outline: none;
+}
+
+.cuadro-login input[name=password] {
     border: none;
     height: 25px;
     width: 65%;
     outline: none;
 }
 
-.cont-login .reset-password{
-  text-align: end;
+.cont-login .reset-password {
+    text-align: end;
 }
 
-.cont-login .reset-password a{
-  text-decoration: none;
-  color: #686969;
-  font-size: 12px;
+.cont-login .reset-password a {
+    text-decoration: none;
+    color: #686969;
+    font-size: 12px;
 }
 
-.boton-login button{
-  color: white;
-  width: 200px;
-  height: 55px;
-  background-image: linear-gradient(45deg, #007bff, #00c5ff);
-  font-size: 18px;
-  font-weight: bold;
-  border: 0 solid black;
-  border-radius: 15px;
-  margin: 5px;
-  cursor: pointer;
-}
-.boton-login button:hover{
-  background-image: linear-gradient(45deg, #00c5ff, #007bff);
-}
-.boton-login button:active{
-  transform: scale(0.9);
+.boton-login button {
+    color: white;
+    width: 200px;
+    height: 55px;
+    background-image: linear-gradient(45deg, #007bff, #00c5ff);
+    font-size: 18px;
+    font-weight: bold;
+    border: 0 solid black;
+    border-radius: 15px;
+    margin: 5px;
+    cursor: pointer;
 }
 
-.new-cuenta p{
-  padding: 0;
-  margin: 0;
-  color: #686969;
+.boton-login button:hover {
+    background-image: linear-gradient(45deg, #00c5ff, #007bff);
 }
 
-.new-cuenta a{
-  color: #007bff;
-  text-decoration: none;
+.boton-login button:active {
+    transform: scale(0.9);
+}
+
+.new-cuenta p {
+    padding: 0;
+    margin: 0;
+    color: #686969;
+}
+
+.new-cuenta a {
+    color: #007bff;
+    text-decoration: none;
 }
 
 @media (max-width: 795px) {
-  .container {
-    flex-direction: column;
-    align-items: center;
-  }
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
 
-  .container .cont-login,
-  .container .cont-text {
-    width: 100%;
-    padding: 20px;
-    box-sizing: border-box;
-  }
+    .container .cont-login,
+    .container .cont-text {
+        width: 100%;
+        padding: 20px;
+        box-sizing: border-box;
+    }
 
-  .container .cont-text {
-    text-align: center;
-  }
+    .container .cont-text {
+        text-align: center;
+    }
 
-  .cuadro-login {
-    width: 90%;
-    max-width: 350px;
-    margin: 0 auto;
-    padding: 10px;
-    gap: 10px;
-  }
+    .cuadro-login {
+        width: 90%;
+        max-width: 350px;
+        margin: 0 auto;
+        padding: 10px;
+        gap: 10px;
+    }
 
-  .cuadro-login .email-logo,
-  .cuadro-login .password-logo {
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    width: 40px;
-    height: 40px;
-    margin: 0 5px;
-  }
+    .cuadro-login .email-logo,
+    .cuadro-login .password-logo {
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        width: 40px;
+        height: 40px;
+        margin: 0 5px;
+    }
 
-  .cuadro-login .view-password {
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
-    width: 30px;
-    height: 30px;
-    margin: 0 5px;
-    cursor: pointer;
-  }
+    .cuadro-login .view-password {
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        width: 30px;
+        height: 30px;
+        margin: 0 5px;
+        cursor: pointer;
+    }
 
-  .cuadro-login input {
-    flex: 1;
-    font-size: 1rem;
-  }
+    .cuadro-login input {
+        flex: 1;
+        font-size: 1rem;
+    }
 
-  .boton-login {
-    display: flex;
-    justify-content: center;
-  }
+    .boton-login {
+        display: flex;
+        justify-content: center;
+    }
 }

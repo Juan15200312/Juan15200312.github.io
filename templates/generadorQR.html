@@ -14,13 +14,13 @@
     </section>
 
     <section class="container">
-        <form id="generador_form">
+        <div id="generador_form">
             <h2>Inserta una URL o texto</h2>
             <input type="text" name="urlYT" id="urlQR" placeholder="http://google.com/" required>
             <div class="botones">
-                <button type="submit" id="submit">Generar QR</button>
+                <button id="submit" onclick="iniciarGeneradorQR()">Generar QR</button>
             </div>
-        </form>
+        </div>
         <div id="text"></div>
     </section>
 

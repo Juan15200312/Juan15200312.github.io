@@ -1,15 +1,18 @@
 import os
 from flask import Flask, request, jsonify, render_template, send_from_directory
 from flask_cors import CORS
+from climaGlobal import pedirDatosClima
 from convertYT import convertir_a_mp3, convertir_a_mp4, borrarArchivo
 from database import guardarDatos, verificarCuentaDB, añadirCuentaDB, resetPasswordCorreoDB, resetPasswordDB
 from enviarCorreo import enviarCorreo
 from dotenv import load_dotenv
-from generadorQR import generarQR_imagen
+from generadorQR import generarQR_imagen, borrarImages
+
+load_dotenv()
 app = Flask(__name__)
 DOWNLOAD_FOLDER = os.path.abspath(".")
 CORS(app)
-load_dotenv()
+
 
 @app.route('/index.html')
 def home():
@@ -42,6 +45,11 @@ def download_file(filename):
 @app.route('/generadorQR.html')
 def generador_QR():
     return render_template('generadorQR.html')
+
+@app.route('/climaGlobal.html')
+def clima_global():
+    return render_template('climaGlobal.html')
+
 
 @app.route('/enviar', methods=['POST'])
 def recibirDatos():
@@ -139,6 +147,7 @@ def convertYT():
 @app.route('/generadorQR', methods=['POST'])
 def generadorQR():
     borrarArchivo()
+    borrarImages()
     datosGenerador = request.get_json()
     print("Datos recibidos")
     print(f"URL: {datosGenerador['urlQR']}")
@@ -152,7 +161,20 @@ def generadorQR():
     else:
         return jsonify({"mensaje": mensaje, "urlImagen" : None, "urlDescarga": None}), 200
 
+@app.route('/climaGlobal', methods=['POST'])
+def climaGlobal():
+    borrarArchivo()
+    os.remove('static/images/images-qr/imagenQRgenerada.png')
+    datosCiudad = request.get_json()
+    print("Datos recibidos")
+    print(f"Ciudad: {datosCiudad['ciudad']}")
 
+    resultado, datosClimaGlobal, mensaje = pedirDatosClima(datosCiudad['ciudad'])
+
+    if resultado:
+        return jsonify({"resultado": True,"mensaje": mensaje, "datosClimaGlobal": datosClimaGlobal}), 200
+    else:
+        return jsonify({"resultado": False,"mensaje": mensaje, "datosClimaGlobal": None}), 200
 
 
 if __name__ == '__main__':

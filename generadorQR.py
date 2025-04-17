@@ -1,3 +1,6 @@
+import glob
+import os
+import time
 import qrcode
 from PIL import Image
 
@@ -12,10 +15,19 @@ def generarQR_imagen(url):
         qr_img = qr.make_image(fill_color=fill_color, back_color=back_color)
         logo = Image.open(img_logo)
         posicion = ((qr_img.size[0] - logo.size[0]) // 2, (qr_img.size[1] - logo.size[1]) // 2)
-        ruta_final = f'static/images/imagenQRgenerada.png'
+        timestamp = str(int(time.time()))
+        ruta_final = f'static/images/images-qr/imagenQRgenerada_{timestamp}.png'
         qr_img.paste(logo, posicion)
         qr_img.save(ruta_final)
         return ruta_final, f'Imagen generada con exito. '
     except Exception as error:
         print("Ops, ocurrio un error: ", error)
         return None, f'Ocurrio un error al generar la imagen. '
+
+def borrarImages():
+    files = glob.glob('static/images/images-qr/imagenQRgenerada_*.png')
+    for f in files:
+        try:
+            os.remove(f)
+        except Exception as e:
+            print(f"Error borrando {f}: {e}")

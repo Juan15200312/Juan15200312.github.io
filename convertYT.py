@@ -2,7 +2,6 @@ import os
 from os import listdir
 import re
 from unicodedata import normalize
-
 from yt_dlp import YoutubeDL
 
 def convertir_a_mp3(url):
@@ -48,14 +47,14 @@ def convertir_a_mp4(url):
         print(f"Archivo descargado: {original_filename}")
         clean_title = renombrarArchivo(original_filename)
         print(f"Descarga completada: {clean_title}")
-        return clean_title, f"Descarga completada: {clean_title}"
+        return clean_title, f"Conversion exitosa: {clean_title}"
     except Exception as e:
         print("Ocurrió un error:", e)
         return None, f"Error al descargar: {url}"
 
 def borrarArchivo():
     lista=listdir('.')
-    extenciones=['.mp3','.mp4','.webm','png']
+    extenciones=['.mp3','.mp4','.webm','png', 'jpg']
     try:
         for archivo in lista:
             for extencion in extenciones:

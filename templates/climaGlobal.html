@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Clima Global</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../static/css/climaGlobal.css">
+    <link rel="shortcut icon" type="image/x-icon" href="../static/images/marca.png">
+</head>
+<body>
+<header>
+    <div class="logo"></div>
+    <h1>Clima Global</h1>
+</header>
+<div class="contenedor">
+    <div class="search-container" id="clima-form">
+        <div class="search-input">
+            <div class="search-icon"></div>
+            <input type="text" id="ciudad" placeholder="Ej: Madrid, ES">
+        </div>
+        <button id="clima-boton" onclick="mandarCiudad()">Buscar</button>
+    </div>
+
+    <div class="clima-card">
+
+        <div class="contenedor-clima">
+            <div class="clima-header">
+                <h2 id="nombre-ciudad">Alpedrete</h2>
+                <p id="pais">ES</p>
+                <p>Hora local: <span id="hora-actual">14:22</span></p>
+            </div>
+
+            <div class="clima-info">
+                <h1 class="temp-principal">
+                    <span id="temp-actual">8</span><sup>°C</sup>
+                </h1>
+                <div class="info-adicional">
+                    <p>Sensación: <span id="sensacion-termica">14</span>°C</p>
+                    <p>
+                        T. min: <span id="temp-min">5</span>°C /
+                        T. máx: <span id="temp-max">15</span>°C
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="clima-condicion">
+            <div class="icono-clima" id="icono-clima"></div>
+            <p id="descripcion-clima">Algo de nubes</p>
+        </div>
+
+    </div>
+
+    <div class="estadisticas-grid">
+        <div class="estadistica">
+            🌡️ Sensación Térmica
+            <span id="sensacion-termica2">6.97</span> °C
+        </div>
+
+        <div class="estadistica">
+            💨 Viento
+            <span id="velocidad-viento">3.16</span> m/s
+        </div>
+
+        <div class="estadistica">
+            💧 Humedad
+            <span id="humedad">48</span>%
+        </div>
+
+        <div class="estadistica">
+            📏 Presión
+            <span id="presion">1005</span> hPa
+        </div>
+
+        <div class="estadistica">
+            👁️ Visibilidad
+            <span id="visibilidad">706</span> m
+        </div>
+
+        <div class="estadistica">
+            ☀️ Amanecer/Atardecer
+            <div id="horarios-sol">07:30 / 18:45</div>
+        </div>
+    </div>
+
+</div>
+
+<script src="../static/js/climaGlobal.js"></script>
+</body>
+</html>

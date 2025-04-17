@@ -4,6 +4,11 @@ document.getElementById('convert_form').addEventListener('submit', function(even
     const textDiv = document.getElementById('text');
     const container = document.getElementById('container');
 
+    ['pros', 'titulo', 'descarga'].forEach(id => {
+        const elem = document.getElementById(id);
+        if (elem) elem.remove();
+    });
+
     const pros = document.createElement('div')
     pros.id = 'pros'
     pros.className = 'pros'
@@ -36,13 +41,23 @@ document.getElementById('convert_form').addEventListener('submit', function(even
 
     fetch(url, options)
         .then(response => {
-            if (!response.ok) {
-                throw new Error('Error en la respuesta del servidor');
-            }
+            if (!response.ok) throw new Error('Error en la respuesta del servidor');
             return response.json();
         })
         .then(datosUrl =>{
-            alert(datosUrl.mensaje)
+            console.log(datosUrl.mensaje)
+            while (pros.firstChild){
+                    pros.removeChild(pros.firstChild)
+            }
+            const titulo = document.createElement('div')
+                titulo.id = 'titulo'
+                container.insertBefore(titulo, textDiv)
+
+            const titulo_des = document.createElement('p')
+                titulo_des.id = 'titulo-des'
+                titulo_des.textContent = datosUrl.mensaje
+                titulo.appendChild(titulo_des)
+
             if (datosUrl.descargar){
                 const descarga = document.createElement('div')
                 descarga.id = 'descarga'
@@ -55,9 +70,6 @@ document.getElementById('convert_form').addEventListener('submit', function(even
                 botonDescarga.textContent = 'Descargar'
                 botonDescarga.addEventListener('click', () => descargarMusica(datosUrl.descargar, descarga));
                 descarga.appendChild(botonDescarga);
-                while (pros.firstChild){
-                    pros.removeChild(pros.firstChild)
-                }
             }
         })
         .catch((error) => {
@@ -68,8 +80,8 @@ document.getElementById('convert_form').addEventListener('submit', function(even
 
 function descargarMusica(urlDescarga, descarga){
     document.getElementById('urlYT').value = '';
-    while (descarga.firstChild){
-        descarga.removeChild(descarga.firstChild)
-    }
+    const titulo = document.getElementById('titulo');
+    if (titulo) titulo.remove();
+    if (descarga) descarga.remove();
     window.location.href = urlDescarga
 }
