@@ -11,9 +11,9 @@ header {
     gap: 15px;
     align-items: center;
     padding: 10px;
-    background-image: linear-gradient(135deg, #6B8DD6 0%, #8E37D7 100%);;
+    background: radial-gradient(circle, #a6b9df 0%, #0f6ff3 100%);
     color: white;
-    box-shadow: 2px 2px 5px #8539c5;
+    box-shadow: 2px 2px 8px #2c2c2c;
 }
 
 header h1 {
@@ -57,7 +57,7 @@ header .logo {
 }
 
 .search-input .search-icon {
-    background-image: url("../images/images-clima/ubi2.png");
+    background-image: url("../images/images-clima/ubi3.png");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -73,7 +73,7 @@ header .logo {
 }
 
 .search-container button {
-    background-image: linear-gradient(135deg, #6B8DD6 0%, #8E37D7 100%);
+    background: radial-gradient(circle, #92a9d8 0%, #0f6ff3 100%);
     color: white;
     font-weight: bold;
     border: none;
@@ -86,13 +86,13 @@ header .logo {
 }
 
 .search-container button:hover {
-    background-image: linear-gradient(135deg, #8E37D7 20%, #6B8DD6 50%);
+    box-shadow: 2px 2px 5px #2c2c2c;
 }
 
 .clima-card {
     width: auto;
     height: 280px;
-    background-image: linear-gradient(135deg, #6B8DD6 0%, #8E37D7 100%);
+    background: radial-gradient(circle, #a6b9df 0%, #0f6ff3 100%);
     color: white;
     border-radius: 15px;
     padding: 3rem;
@@ -186,7 +186,7 @@ header .logo {
     border-radius: 10px;
     text-align: center;
     align-content: center;
-    box-shadow: 0 0 5px #8539c5;
+    box-shadow: 0 0 5px #006bff;
     cursor: pointer;
 }
 
@@ -207,9 +207,6 @@ header .logo {
         gap: 15px;
         align-items: center;
         padding: 10px;
-        background-image: linear-gradient(135deg, #6B8DD6 0%, #8E37D7 100%);;
-        color: white;
-        box-shadow: 2px 2px 5px #8539c5;
     }
 
     header h1 {
@@ -220,7 +217,6 @@ header .logo {
         width: 50px;
         height: 50px;
     }
-
 
     .contenedor {
         margin: 10px;

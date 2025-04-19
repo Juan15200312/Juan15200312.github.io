@@ -68,7 +68,7 @@ function procesarDatos(datos){
     }
 
     setInterval(() => {
-        document.getElementById('hora-actual').innerHTML = `Hora local: ${formatearHora(offsetSegundos)}`;
+        document.getElementById('hora-actual').innerHTML = `${formatearHora(offsetSegundos)}`;
     }, 1000);
 
     document.querySelector('.icono-clima').style.backgroundImage = `url(http://192.168.1.25:7550/static/images/images-clima/${datos["icono"]}.png)`

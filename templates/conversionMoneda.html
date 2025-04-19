@@ -1,0 +1,126 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de divisas</title>
+    <link rel="stylesheet" href="../static/css/conversionMoneda.css">
+    <link rel="shortcut icon" type="image/x-icon" href="../static/images/marca.png">
+</head>
+<body>
+<header>
+    <div class="logo"></div>
+    <div class="titulo-header">
+        <h1>Conversor de divisas</h1>
+    </div>
+</header>
+
+<section class="container">
+    <div class="datos">
+        <p>Importe: </p>
+        <input type="number" id="importe" placeholder="Ingrese el importe">
+
+        <p>Moneda: </p>
+        <select name="Moneda1" id="moneda1">
+            <option value="seleccione">Seleccione</option>
+            <option value="EUR">EUR – Euro</option>
+            <option value="USD">USD – Dólar estadounidense</option>
+            <option value="PEN">PEN – Sol peruano</option>
+            <option value="ARS">ARS – Peso argentino</option>
+            <option value="BRL">BRL – Real brasileño</option>
+            <option value="CLP">CLP – Peso chileno</option>
+            <option value="COP">COP – Peso colombiano</option>
+            <option value="UYU">UYU – Peso uruguayo</option>
+            <option value="PYG">PYG – Guaraní paraguayo</option>
+            <option value="VES">VES – Bolívar venezolano</option>
+            <option value="CAD">CAD – Dólar canadiense</option>
+            <option value="MXN">MXN – Peso mexicano</option>
+            <option value="GBP">GBP – Libra esterlina</option>
+            <option value="CHF">CHF – Franco suizo</option>
+            <option value="SEK">SEK – Corona sueca</option>
+            <option value="NOK">NOK – Corona noruega</option>
+            <option value="DKK">DKK – Corona danesa</option>
+            <option value="PLN">PLN – Zloty polaco</option>
+            <option value="CZK">CZK – Corona checa</option>
+            <option value="HUF">HUF – Forint húngaro</option>
+            <option value="RUB">RUB – Rublo ruso</option>
+            <option value="TRY">TRY – Lira turca</option>
+            <option value="JPY">JPY – Yen japonés</option>
+            <option value="CNY">CNY – Yuan chino</option>
+            <option value="INR">INR – Rupia india</option>
+            <option value="KRW">KRW – Won surcoreano</option>
+            <option value="SGD">SGD – Dólar de Singapur</option>
+            <option value="HKD">HKD – Dólar de Hong Kong</option>
+            <option value="IDR">IDR – Rupia indonesia</option>
+            <option value="THB">THB – Baht tailandés</option>
+            <option value="MYR">MYR – Ringgit malasio</option>
+            <option value="PHP">PHP – Peso filipino</option>
+            <option value="VND">VND – Dong vietnamita</option>
+            <option value="AED">AED – Dírham de los EAU</option>
+            <option value="SAR">SAR – Rial saudí</option>
+            <option value="KWD">KWD – Dinar kuwaití</option>
+            <option value="QAR">QAR – Rial catarí</option>
+            <option value="ILS">ILS – Shekel israelí</option>
+            <option value="ZAR">ZAR – Rand sudafricano</option>
+            <option value="AUD">AUD – Dólar australiano</option>
+            <option value="NZD">NZD – Dólar neozelandés</option>
+        </select>
+
+        <p>Cambiar a:</p>
+        <select name="Moneda2" id="moneda2">
+            <option value="seleccione">Seleccione</option>
+            <option value="EUR">EUR – Euro</option>
+            <option value="USD">USD – Dólar estadounidense</option>
+            <option value="PEN">PEN – Sol peruano</option>
+            <option value="ARS">ARS – Peso argentino</option>
+            <option value="BRL">BRL – Real brasileño</option>
+            <option value="CLP">CLP – Peso chileno</option>
+            <option value="COP">COP – Peso colombiano</option>
+            <option value="UYU">UYU – Peso uruguayo</option>
+            <option value="PYG">PYG – Guaraní paraguayo</option>
+            <option value="VES">VES – Bolívar venezolano</option>
+            <option value="CAD">CAD – Dólar canadiense</option>
+            <option value="MXN">MXN – Peso mexicano</option>
+            <option value="GBP">GBP – Libra esterlina</option>
+            <option value="CHF">CHF – Franco suizo</option>
+            <option value="SEK">SEK – Corona sueca</option>
+            <option value="NOK">NOK – Corona noruega</option>
+            <option value="DKK">DKK – Corona danesa</option>
+            <option value="PLN">PLN – Zloty polaco</option>
+            <option value="CZK">CZK – Corona checa</option>
+            <option value="HUF">HUF – Forint húngaro</option>
+            <option value="RUB">RUB – Rublo ruso</option>
+            <option value="TRY">TRY – Lira turca</option>
+            <option value="JPY">JPY – Yen japonés</option>
+            <option value="CNY">CNY – Yuan chino</option>
+            <option value="INR">INR – Rupia india</option>
+            <option value="KRW">KRW – Won surcoreano</option>
+            <option value="SGD">SGD – Dólar de Singapur</option>
+            <option value="HKD">HKD – Dólar de Hong Kong</option>
+            <option value="IDR">IDR – Rupia indonesia</option>
+            <option value="THB">THB – Baht tailandés</option>
+            <option value="MYR">MYR – Ringgit malasio</option>
+            <option value="PHP">PHP – Peso filipino</option>
+            <option value="VND">VND – Dong vietnamita</option>
+            <option value="AED">AED – Dírham de los EAU</option>
+            <option value="SAR">SAR – Rial saudí</option>
+            <option value="KWD">KWD – Dinar kuwaití</option>
+            <option value="QAR">QAR – Rial catarí</option>
+            <option value="ILS">ILS – Shekel israelí</option>
+            <option value="ZAR">ZAR – Rand sudafricano</option>
+            <option value="AUD">AUD – Dólar australiano</option>
+            <option value="NZD">NZD – Dólar neozelandés</option>
+        </select>
+        <br><br>
+    </div>
+
+
+    <div class="boton-enviar">
+        <button id="botonE" onclick="procesarDatosMoneda()">Enviar</button>
+    </div>
+    <div id="resultado_moneda"></div>
+</section>
+
+<script src="../static/js/conversionMoneda.js"></script>
+
+</body>
+</html>

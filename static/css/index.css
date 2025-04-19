@@ -1,512 +1,549 @@
-body{
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: black;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: black;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-header{
-  display: flex;
-  flex-direction: row;
-  position: fixed;
-  width: 100%;
-  justify-content: space-between;
-  background-color: aliceblue;
-  color: black;
-  align-items: center;
-  padding: 5px 25px;
-  box-shadow: 0 0 25px black ;
+header {
+    display: flex;
+    flex-direction: row;
+    position: fixed;
+    width: 100%;
+    justify-content: space-between;
+    background-color: aliceblue;
+    color: black;
+    align-items: center;
+    padding: 5px 25px;
+    box-shadow: 0 0 25px black;
 }
 
-header .logo{
-  color: #007bff;
-  cursor: pointer;
+header .logo {
+    color: #007bff;
+    cursor: pointer;
 }
 
-.logo:hover{
-  color: #006bff;
-}
-.logo:active{
-  transform: scale(0.95);
+.logo:hover {
+    color: #006bff;
 }
 
-nav{
-  display: flex;
-  flex-direction: row;
-  gap: 25px;
-  margin-right: 45px;
+.logo:active {
+    transform: scale(0.95);
 }
 
-nav a{
-  font-weight: bold;
-  margin-right: 10px;
-  text-decoration: none;
-  color: black;
-}
-nav a:hover{
-  color: #006bff;
+nav {
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+    margin-right: 45px;
 }
 
-.hero{
-  justify-items: center;
-  height: 70vh;
-  background-image: linear-gradient(0deg, rgba(0,0,0,0.6), rgba(0,0,0,0.4)), url("../images/hero2.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  align-content: center;
+nav a {
+    font-weight: bold;
+    margin-right: 10px;
+    text-decoration: none;
+    color: black;
 }
 
-.hero h1{
-  color: white;
-  font-size: 40px;
+nav a:hover {
+    color: #006bff;
 }
 
-.hero p{
-  color: white;
-  font-size: 18px;
-  padding-bottom: 25px;
+.hero {
+    justify-items: center;
+    height: 70vh;
+    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4)), url("../images/hero2.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    align-content: center;
 }
 
-.logos-progra{
-  display: flex;
-  flex-direction: row;
-  gap: 20px;
-}
-.log{
-  width: 55px;
-  height: 55px;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  margin-bottom: 50px;
+.hero h1 {
+    color: white;
+    font-size: 40px;
 }
 
-.log:active{
-  transform: scale(0.85)
+.hero p {
+    color: white;
+    font-size: 18px;
+    padding-bottom: 25px;
 }
 
-.log:first-child{
-  background-image: url(../images/java.png);
-}
-.log:nth-child(2){
-  background-image: url(../images/python.png);
-}
-.log:nth-child(3){
-  background-image: url(../images/js.png);
-}
-.log:nth-child(4){
-  background-image: url(../images/mysql.png);
-}
-.log:nth-child(5){
-  background-image: url(../images/git.png);
-}
-.log:nth-child(6){
-  background-image: url(../images/linux.png);
+.logos-progra {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
 }
 
-button{
-  color: white;
-  background-image: linear-gradient(45deg, #007bff, #00c5ff);
-  border: 1px solid black;
-  border-radius: 5px;
-  padding: 15px;
-  font-size: 15px;
-  font-weight: bold;
-  cursor: pointer;
+.log {
+    width: 55px;
+    height: 55px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-bottom: 50px;
 }
 
-button:hover{
-  background-image: linear-gradient(25deg, #00c5ff, #007bff);
-  box-shadow: 0 0 15px rgb(0, 153, 255);
+.log:active {
+    transform: scale(0.85)
 }
 
-button:active{
-  transform: scale(0.95);
+.log:first-child {
+    background-image: url(../images/java.png);
 }
 
-.sobre-mi{
-  height: 450px;
-  margin: 20px;
-  display: grid;
-  grid-template-columns: repeat(2,1fr);
-  align-items: center;
-  padding: 40px;
-  gap: 50px;
-  text-align: center;
+.log:nth-child(2) {
+    background-image: url(../images/python.png);
 }
 
-.imagen-two{
-  background-image: url("../images/ki.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  border: #ffffff 1px solid;
-  border-radius: 25px;
-  width: 380px;
-  height: 380px;
+.log:nth-child(3) {
+    background-image: url(../images/js.png);
+}
+
+.log:nth-child(4) {
+    background-image: url(../images/mysql.png);
+}
+
+.log:nth-child(5) {
+    background-image: url(../images/git.png);
+}
+
+.log:nth-child(6) {
+    background-image: url(../images/linux.png);
+}
+
+button {
+    color: white;
+    background-image: linear-gradient(45deg, #007bff, #00c5ff);
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 15px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background-image: linear-gradient(25deg, #00c5ff, #007bff);
+    box-shadow: 0 0 15px rgb(0, 153, 255);
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+.sobre-mi {
+    height: 450px;
+    margin: 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    padding: 40px;
+    gap: 50px;
+    text-align: center;
+}
+
+.imagen-two {
+    background-image: url("../images/ki.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: #ffffff 1px solid;
+    border-radius: 25px;
+    width: 380px;
+    height: 380px;
 }
 
 .mis-programas {
-  background-color: rgb(30, 30, 30);
-  color: white;
-  padding: 0 40px;
+    background-color: rgb(30, 30, 30);
+    color: white;
+    padding: 0 40px;
 }
 
 .mis-programas .container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.container h2{
-  margin-bottom: 10px;
-  font-size: 50px;
+.container h2 {
+    margin-bottom: 10px;
+    font-size: 50px;
 }
 
 .container .mis-cartas {
-  display: flex;
-  flex-direction: row;
-  overflow-x: scroll;
-  width: 100%;
-  padding: 40px;
-  gap: 35px;
-  scrollbar-color: #ffffff transparent;
+    display: flex;
+    flex-direction: row;
+    overflow-x: scroll;
+    width: 100%;
+    padding: 40px;
+    gap: 35px;
+    scrollbar-color: #ffffff transparent;
 }
 
 .mis-cartas .carta {
-  width: 350px;
-  height: 320px;
-  border: 1px solid #272a2a;
-  border-radius: 25px;
-  text-align: center;
-  flex-shrink: 0;
-  padding: 20px;
-  background-repeat: no-repeat;
-  background-size: 100% 150px;
-  background-position-y: 0;
-  background-color: rgba(50, 50, 50, 1);
-  box-shadow: 2px 2px 10px rgba(0,0,0,0.5);
-  align-content: center;
-}
-.carta p{
-  padding-top: 70px;
-  margin-bottom: 30px;
+    width: 350px;
+    height: 320px;
+    border: 1px solid #272a2a;
+    border-radius: 25px;
+    text-align: center;
+    flex-shrink: 0;
+    padding: 20px;
+    background-repeat: no-repeat;
+    background-size: 100% 150px;
+    background-position-y: 0;
+    background-color: rgba(50, 50, 50, 1);
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+    align-content: center;
 }
 
-.carta h3{
-  font-size: 30px;
+.carta p {
+    padding-top: 70px;
+    margin-bottom: 30px;
 }
 
-.carta:first-child{
-  background-image: linear-gradient(
-      0deg,
-      rgba(0,0,0,0.5),
-      rgba(0,0,0,0.5)
-  )
-  ,url(../images/convYT.jpg);
+.carta h3 {
+    font-size: 30px;
 }
 
-.carta:nth-child(2){
-  background-image: linear-gradient(
-      0deg,
-      rgba(0,0,0,0.5),
-      rgba(0,0,0,0.5)
-  )
-  ,url(../images/QR.png);
+.carta:first-child {
+    background-image: linear-gradient(
+            0deg,
+            rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0.5)
+    ), url(../images/convYT.jpg);
 }
 
-.carta:nth-child(3){
-  background-image: linear-gradient(
-      0deg,
-      rgba(0,0,0,0.5),
-      rgba(0,0,0,0.5)
-  )
-  ,url(../images/clima-portada.png);
+.carta:nth-child(2) {
+    background-image: linear-gradient(
+            0deg,
+            rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0.5)
+    ), url(../images/QR.png);
 }
 
-.carta:nth-child(4){
-  background-image: linear-gradient(
-      0deg,
-      rgba(0,0,0,0.5),
-      rgba(0,0,0,0.5)
-  )
-  ,url(../images/hero2.jpg);
+.carta:nth-child(3) {
+    background-image: linear-gradient(
+            0deg,
+            rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0.5)
+    ), url(../images/clima-portada.png);
 }
 
-.carta:nth-child(5){
-  background-image: linear-gradient(
-      0deg,
-      rgba(0,0,0,0.5),
-      rgba(0,0,0,0.5)
-  )
-  ,url(../images/hero2.jpg);
+.carta:nth-child(4) {
+    background-image: linear-gradient(
+            0deg,
+            rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0.5)
+    ), url(../images/logo-conversionMonedas.png);
 }
 
-.habilidades .cont{
-  display: flex;
-  flex-direction: row;
-  height: 350px;
-  padding: 70px;
-  text-align: center;
-  align-items: center;
-  justify-content: space-between;
-  gap: 50px;
+.carta:nth-child(5) {
+    background-image: linear-gradient(
+            0deg,
+            rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0.5)
+    ), url(../images/traductor-portada.png);
 }
 
-.cont .habi-imagen{
-  width: 450px;
-  height: 350px;
-  background-image: url("../images/programador.svg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+.habilidades .cont {
+    display: flex;
+    flex-direction: row;
+    height: 350px;
+    padding: 70px;
+    text-align: center;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
 }
 
-.textos h2{
-  padding-top: 10px;
+.cont .habi-imagen {
+    width: 450px;
+    height: 350px;
+    background-image: url("../images/programador.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
-.textos .list{
-  padding-top: 30px;
-  text-decoration: none;
-  list-style: none;
+.textos h2 {
+    padding-top: 10px;
 }
 
-.textos li{
-  text-align: initial;
-  padding: 6px;
-  font-weight: bold;
-  font-size: 20px;
+.textos .list {
+    padding-top: 30px;
+    text-decoration: none;
+    list-style: none;
 }
 
-.contacto{
-  background-color: rgb(30, 30, 30);
-  color: white;
-  height: 700px;
+.textos li {
+    text-align: initial;
+    padding: 6px;
+    font-weight: bold;
+    font-size: 20px;
 }
 
-.contenedor h2{
-  font-size: 50px;
+.contacto {
+    background-color: rgb(30, 30, 30);
+    color: white;
+    height: 700px;
 }
 
-.contacto .contenedor{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  gap: 20px;
+.contenedor h2 {
+    font-size: 50px;
 }
 
-.contenedor .formulario{
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
+.contacto .contenedor {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
 }
 
-.formulario input[name=nombre]{
-  margin-top: 15px;
-  width: 550px;
-  height: 45px;
-  border: 1px solid black;
-  border-radius: 5px;
-}
-.formulario input[name=correo]{
-  margin-top: 15px;
-  width: 550px;
-  height: 45px;
-  border: 1px solid black;
-  border-radius: 5px;
+.contenedor .formulario {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
 }
 
-.formulario textarea[name=mensaje]{
-  margin-top: 15px;
-  width: 550px;
-  height: 100px;
-  border: 1px solid black;
-  border-radius: 5px;
+.formulario input[name=nombre] {
+    margin-top: 15px;
+    width: 550px;
+    height: 45px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.formulario input[name=correo] {
+    margin-top: 15px;
+    width: 550px;
+    height: 45px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.formulario textarea[name=mensaje] {
+    margin-top: 15px;
+    width: 550px;
+    height: 100px;
+    border: 1px solid black;
+    border-radius: 5px;
 
 }
 
-footer .contenido{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-top: 25px;
+footer .contenido {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 25px;
 }
 
-.icons-footer{
-  display: flex;
-  flex-direction: row;
-  gap: 25px;
+.icons-footer {
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
 }
 
-.icons{
-  width: 50px;
-  height: 50px;
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
+.icons {
+    width: 50px;
+    height: 50px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
-.icons:first-child{
-  background-image: url("../images/github.png");
+.icons:first-child {
+    background-image: url("../images/github.png");
 }
-.icons:nth-child(2){
-  background-image: url("../images/linkedin.png");
+
+.icons:nth-child(2) {
+    background-image: url("../images/linkedin.png");
 }
-.icons:nth-child(3){
-  background-image: url("../images/ig.png");
+
+.icons:nth-child(3) {
+    background-image: url("../images/ig.png");
 }
 
 @media (max-width: 795px) {
-  body{
-    padding-top: 100px;
-  }
-  header {
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: white;
-    z-index: 999;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-  header .logo{
-    padding-right: 50px;
-  }
-  nav {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
-  }
+    body {
+        padding-top: 100px;
+    }
 
-  .hero {
-    height: auto;
-    padding: 50px 15px;
-    text-align: center;
-  }
-  .hero h1 {
-    font-size: 32px;
-  }
-  .hero p {
-    font-size: 16px;
-  }
-  .logos-progra {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
-    margin-bottom: 30px;
-  }
-  .log {
-    width: 45px;
-    height: 45px;
-  }
-  button {
-    padding: 10px;
-    font-size: 14px;
-  }
+    header {
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: white;
+        z-index: 999;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
 
-  .sobre-mi {
-    height: auto;
-    grid-template-columns: 1fr;
-    gap: 20px;
-    padding: 20px;
-    align-content: center;
-    justify-items: center;
-  }
-  .imagen-two {
-    width: 200px;
-    height: 200px;
-  }
-  .texto {
-    padding: 0 20px;
-  }
-  .texto h2 {
-    font-size: 28px;
-  }
-  .texto p {
-    font-size: 16px;
-  }
-  .mis-programas .container h2 {
-    font-size: 36px;
-    margin-bottom: 8px;
-  }
-  .mis-cartas {
-    gap: 20px;
-    overflow-x: scroll;
-  }
-  .mis-cartas .carta {
-    width: 280px;
-    height: auto;
-    padding: 15px;
-    flex-shrink: 0;
-  }
-  .mis-cartas .carta h3 {
-    font-size: 24px;
-  }
-  .mis-cartas .carta p {
-    padding-top: 60px;
-    font-size: 14px;
-  }
-  .mis-cartas .carta button {
-    padding: 8px;
-    font-size: 12px;
-  }
-  .habilidades .cont {
-    flex-direction: column;
-    height: auto;
-    padding: 30px 15px;
-    gap: 20px;
-    text-align: center;
-  }
-  .cont .habi-imagen {
-    width: 350px;
-    height: 200px;
-    background-size: cover;
-  }
-  .textos h2 {
-    font-size: 28px;
-  }
-  .textos li {
-    font-size: 16px;
-  }
+    header .logo {
+        padding-right: 50px;
+    }
 
-  .contacto {
-    height: auto;
-    padding: 30px 15px;
-  }
-  .contenedor h2 {
-    font-size: 32px;
-    text-align: center;
-  }
-  .formulario {
-    width: 100%;
-    align-items: center;
-  }
-  .formulario input[name=nombre],
-  .formulario input[name=correo],
-  .formulario textarea[name=mensaje] {
-    width: 80%;
-  }
-  .formulario input[name=nombre],
-  .formulario input[name=correo] {
-    height: 40px;
-  }
-  .formulario textarea[name=mensaje] {
-    height: 80px;
-  }
-  .formulario button {
-    padding: 10px;
-    font-size: 18px;
-  }
-  .icons-footer {
-    gap: 15px;
-  }
-  .icons {
-    width: 40px;
-    height: 40px;
-  }
+    nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .hero {
+        height: auto;
+        padding: 50px 15px;
+        text-align: center;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .logos-progra {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+        margin-bottom: 30px;
+    }
+
+    .log {
+        width: 45px;
+        height: 45px;
+    }
+
+    button {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    .sobre-mi {
+        height: auto;
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 20px;
+        align-content: center;
+        justify-items: center;
+    }
+
+    .imagen-two {
+        width: 200px;
+        height: 200px;
+    }
+
+    .texto {
+        padding: 0 20px;
+    }
+
+    .texto h2 {
+        font-size: 28px;
+    }
+
+    .texto p {
+        font-size: 16px;
+    }
+
+    .mis-programas .container h2 {
+        font-size: 36px;
+        margin-bottom: 8px;
+    }
+
+    .mis-cartas {
+        gap: 20px;
+        overflow-x: scroll;
+    }
+
+    .mis-cartas .carta {
+        width: 280px;
+        height: auto;
+        padding: 15px;
+        flex-shrink: 0;
+    }
+
+    .mis-cartas .carta h3 {
+        font-size: 24px;
+    }
+
+    .mis-cartas .carta p {
+        padding-top: 60px;
+        font-size: 14px;
+    }
+
+    .mis-cartas .carta button {
+        padding: 8px;
+        font-size: 12px;
+    }
+
+    .habilidades .cont {
+        flex-direction: column;
+        height: auto;
+        padding: 30px 15px;
+        gap: 20px;
+        text-align: center;
+    }
+
+    .cont .habi-imagen {
+        width: 350px;
+        height: 200px;
+        background-size: cover;
+    }
+
+    .textos h2 {
+        font-size: 28px;
+    }
+
+    .textos li {
+        font-size: 16px;
+    }
+
+    .contacto {
+        height: auto;
+        padding: 30px 15px;
+    }
+
+    .contenedor h2 {
+        font-size: 32px;
+        text-align: center;
+    }
+
+    .formulario {
+        width: 100%;
+        align-items: center;
+    }
+
+    .formulario input[name=nombre],
+    .formulario input[name=correo],
+    .formulario textarea[name=mensaje] {
+        width: 80%;
+    }
+
+    .formulario input[name=nombre],
+    .formulario input[name=correo] {
+        height: 40px;
+    }
+
+    .formulario textarea[name=mensaje] {
+        height: 80px;
+    }
+
+    .formulario button {
+        padding: 10px;
+        font-size: 18px;
+    }
+
+    .icons-footer {
+        gap: 15px;
+    }
+
+    .icons {
+        width: 40px;
+        height: 40px;
+    }
 }

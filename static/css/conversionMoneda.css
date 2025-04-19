@@ -1,0 +1,106 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+html, body {
+  width: 100%;
+  height: 100%;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f5f7fa;
+  color: black;
+  line-height: 1.6;
+}
+
+header{
+    display: flex;
+    flex-direction: row;
+    background-image: linear-gradient(45deg, #007bff, #00c5ff);
+    gap: 20px;
+    justify-content: start;
+    align-items: center;
+    padding: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+header h1{
+    color: white;
+    font-size: 1.5rem;
+}
+
+header .logo{
+    background-image: url("../images/logo-divisa.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 50px;
+    height: 50px;
+}
+
+.container {
+  max-width: 480px;
+  margin: 3rem auto;
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.datos p {
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+.datos input,
+.datos select {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1.25rem;
+  border: 1px solid #6c6b6b;
+  border-radius: 10px;
+  font-size: 1rem;
+}
+.datos input:focus,
+.datos select:focus {
+  outline: none;
+  border-color: #4aa7ff;
+  box-shadow: 0 0 0 3px rgba(74, 167, 255, 0.2);
+}
+
+.boton-enviar button {
+  width: 100%;
+  padding: 0.85rem;
+  background-image: linear-gradient(10deg, #00c5ff, #007bff);
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.boton-enviar button:hover {
+  box-shadow: 0 0 0 3px rgba(74, 167, 255, 0.6);
+}
+.boton-enviar button:active {
+  transform: scale(0.98);
+}
+
+#resultado_moneda{
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    margin-top: 25px;
+}
+
+@media (max-width: 760px) {
+  .container {
+    margin: 2rem 1rem;
+    padding: 1.5rem;
+  }
+  .datos p {
+    font-size: 0.9rem;
+  }
+  .boton-enviar button {
+    font-size: 0.95rem;
+  }
+}

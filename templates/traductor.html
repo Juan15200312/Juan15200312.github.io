@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Traductor</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../static/css/traductor.css">
+    <link rel="shortcut icon" type="image/x-icon" href="../static/images/marca.png">
+</head>
+<body>
+<header>
+    <div class="logo"></div>
+    <h1>Traductor</h1>
+</header>
+
+<div class="contenedor">
+    <div class="area">
+        <div class="area-header">
+            <span>Detectar idioma</span>
+        </div>
+        <textarea id="texto" placeholder="Escribe o pega el texto aquí."></textarea>
+    </div>
+
+    <button class="botones" id="boton-enviar" onclick="traducirTexto()">Traducir</button>
+
+    <div class="area">
+        <div class="area-header">
+            <span>Traducir a: </span>
+            <select name="idioma" id="idioma">
+                <option value="seleccione">Seleccione</option>
+                <option value="en-us">Inglés</option>
+                <option value="es">Español</option>
+                <option value="zh">Chino mandarín</option>
+                <option value="ru">Ruso</option>
+                <option value="de">Alemán</option>
+                <option value="fr">Francés</option>
+                <option value="ja">Japonés</option>
+                <option value="it">Italiano</option>
+                <option value="ar">Árabe</option>
+                <option value="bn">Bengalí</option>
+                <option value="pt">Portugués</option>
+                <option value="hi">Hindi</option>
+                <option value="jv">Javanés</option>
+                <option value="ko">Coreano</option>
+                <option value="vi">Vietnamita</option>
+                <option value="tr">Turco</option>
+                <option value="nl">Neerlandés</option>
+                <option value="pl">Polaco</option>
+                <option value="ur">Urdu</option>
+                <option value="fa">Persa (Farsi)</option>
+                <option value="th">Tailandés</option>
+                <option value="id">Indonesio</option>
+                <option value="ms">Malayo</option>
+                <option value="he">Hebreo</option>
+                <option value="ta">Tamil</option>
+                <option value="mr">Maratí</option>
+                <option value="te">Télugu</option>
+                <option value="tr">Turco</option>
+                <option value="uk">Ucraniano</option>
+                <option value="ro">Rumano</option>
+                <option value="el">Griego</option>
+                <option value="hu">Húngaro</option>
+            </select>
+
+        </div>
+        <textarea id="resultado-tr" placeholder="Resultado" readonly></textarea>
+    </div>
+</div>
+
+
+<script src="../static/js/traductor.js"></script>
+</body>
+</html>
